@@ -410,6 +410,7 @@ p { margin-bottom: 0.9rem; }
 .project-row:hover { padding-left: 1.4rem; }
 .project-row:hover::before { transform: scaleY(1); }
 .project-row:hover, .project-row:hover .p-meta, .project-row:hover .p-index { color: #fff; }
+.project-row:hover .p-index { -webkit-text-stroke: 0; } /* solid white on the fill, no outline */
 .project-row:hover .p-blurb { color: rgba(255, 255, 255, 0.88); }
 
 .p-index {

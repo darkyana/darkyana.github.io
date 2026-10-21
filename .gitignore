@@ -2,6 +2,8 @@
 # Everything else (input/, copy.md, prototype/, OS junk) stays local.
 /*
 !.gitignore
+!README.md
+!LICENSE
 !index.html
 !work.html
 !experiments.html

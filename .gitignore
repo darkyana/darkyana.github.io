@@ -1,0 +1,11 @@
+# Deploy only the site itself: 4 pages + styles + fonts + assets.
+# Everything else (input/, copy.md, prototype/, OS junk) stays local.
+/*
+!.gitignore
+!index.html
+!work.html
+!experiments.html
+!contact.html
+!styles.css
+!fonts
+!assets

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experiments — Annika Yuan</title>
+  <meta name="description" content="AI-native products built by one human + an AI agent team: Star Quiz and Pocket Budget, live with public code. Plus the wider studio experiments.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%235b3a8e'/%3E%3Ctext x='16' y='21.5' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3EAY%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="monogram" href="index.html"><span class="badge">AY</span>Annika Yuan</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="experiments.html" aria-current="page">Experiments</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding:clamp(3.5rem,8vw,5rem) 0 clamp(2.5rem,6vw,3.5rem)">
+      <div class="wrap">
+        <p class="kicker"><span class="dot"></span>Independent Practice · 2026</p>
+        <h1><span class="hl-grad">AI-native</span> products,<br>one human + an agent team.</h1>
+        <p class="subtitle">
+          Selected side projects — senior UX/UI designer at BMW by day, solo product owner of an
+          AI-agent development team by night. Live products, real users (my family), engineering
+          discipline.
+        </p>
+        <div class="hero-links">
+          <a href="https://github.com/darkyana">github.com/darkyana</a>
+          <a href="https://starquiz.link">starquiz.link</a>
+          <a href="https://darkyana.github.io/pocket-budget/">pocket-budget (live)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW I WORK -->
+    <section class="wrap">
+      <div class="sec-head"><span class="sec-num">00</span><h2>How I work</h2></div>
+      <hr class="sec-rule">
+      <p class="reveal">
+        Since early 2026 I've been running a small product studio with an unusual team structure:
+        <strong>I am the only human</strong> — product owner, design lead, and final decision-maker —
+        and <strong>AI agents do the heavy lifting</strong> as PM, designer, developer, and tester.
+        The workflow is spec-driven: requirements are interrogated into specs, split into tickets,
+        implemented test-first, accepted ticket by ticket, then archived with a retrospective.
+      </p>
+      <p class="reveal">
+        What makes it work is not the models — it's the <strong>discipline layer I design around
+        them</strong>: governed domain vocabulary, architecture decision records (including rejected
+        options), written agent-collaboration conventions, CI on every push, and privacy scans
+        before every commit. AI produces; the system I designed keeps the output clean.
+      </p>
+
+      <div class="stat-grid reveal">
+        <div class="stat"><div class="num">2</div><div class="label">live products in production, public code on GitHub</div></div>
+        <div class="stat"><div class="num">15+</div><div class="label">apps &amp; experiments shipped since early 2026</div></div>
+        <div class="stat"><div class="num">500+</div><div class="label">commits in the last year across the studio</div></div>
+        <div class="stat"><div class="num">43</div><div class="label">ADR + unit tests guarding the two public repos</div></div>
+      </div>
+
+      <div class="chips reveal">
+        <span class="chip">Spec-driven development</span>
+        <span class="chip">TDD · acceptance tests</span>
+        <span class="chip">ADRs incl. rejected options</span>
+        <span class="chip">Agent conventions</span>
+        <span class="chip">3-track CI</span>
+        <span class="chip">Pre-commit privacy scans</span>
+        <span class="chip pink">Claude Code</span>
+        <span class="chip pink">Trae</span>
+        <span class="chip pink">Custom skills &amp; extensions</span>
+      </div>
+      <p class="note">Methodology built on Matt Pocock's open-sourced ai-dev-tools skills framework — publicly credited in the repos.</p>
+    </section>
+
+    <!-- CASE 1: STAR QUIZ -->
+    <section class="wrap">
+      <div class="sec-head"><span class="sec-num">01</span><h2>Star Quiz <span class="cn">星星答题</span></h2></div>
+      <hr class="sec-rule">
+      <div class="chips reveal" style="margin-top:0">
+        <span class="chip">Vue 3 · TypeScript</span>
+        <span class="chip">Cloudflare Workers + D1</span>
+        <span class="chip">PWA</span>
+      </div>
+      <div class="case-links reveal">
+        <a href="https://starquiz.link">Open the live app</a>
+        <a href="https://github.com/darkyana/star-quiz">GitHub</a>
+      </div>
+
+      <div class="figure-row reveal">
+        <figure class="phone">
+          <div class="phone-frame"><div class="screen"><img src="assets/star-quiz-home.png" alt="Star Quiz home screen: star balance, quiz mode selection, start button" loading="lazy"></div></div>
+          <figcaption>Home — star balance, three quiz modes</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="phone-frame"><div class="screen"><img src="assets/star-quiz-quiz.png" alt="Star Quiz answering screen with question and answer options" loading="lazy"></div></div>
+          <figcaption>Answering — earn stars per correct answer</figcaption>
+        </figure>
+      </div>
+
+      <h3>The product</h3>
+      <p class="reveal">
+        A family learning app for my own child: kids answer quiz questions, earn stars, and
+        <strong>redeem stars for real-world rewards</strong>. The twist is the proposal board — the next
+        reward and its price are negotiated between parent and child inside the app, so motivation
+        is co-designed with the kid, not imposed. Deliberately a practice engine, not a testing
+        tool: no judgement, no punishment, adaptive difficulty, "one more round" as the only metric
+        that matters.
+      </p>
+
+      <h3>My role — designing the human–agent contract</h3>
+      <p class="reveal">
+        I'm the product owner and design lead of a team where every other seat is an AI agent. The
+        real design work here is the <strong>collaboration contract</strong> that keeps a one-human team
+        shipping production-grade software:
+      </p>
+      <div class="card-grid reveal">
+        <div class="card">
+          <h4>Spec as the contract</h4>
+          <p>Every feature starts as an interrogated spec, gets split into tickets, is implemented test-first, and is <strong>accepted ticket by ticket</strong> before merging.</p>
+        </div>
+        <div class="card">
+          <h4>Language governance</h4>
+          <p>A domain glossary (<span class="cn">CONTEXT.md</span>) is the single source of truth — every term carries an explicit <em>"this is NOT what it means"</em> avoid-list.</p>
+        </div>
+        <div class="card">
+          <h4>Decision archaeology</h4>
+          <p><strong>18 architecture decision records</strong>, each preserving rejected alternatives. Six months later, anyone can read why the system is shaped the way it is.</p>
+        </div>
+        <div class="card">
+          <h4>Studio vs. showroom</h4>
+          <p>A two-repo system (ADR 0018): the messy studio stays private; the public repo is an <strong>allow-listed, curated projection</strong>.</p>
+        </div>
+      </div>
+
+      <h3>Decisions I own</h3>
+      <ul class="reveal" style="padding-left:1.2rem;color:var(--muted)">
+        <li style="margin-bottom:0.5rem"><strong style="color:var(--ink)">Data boundary as a product promise:</strong> no accounts, no analytics, no long-term profiling — records live locally first and sync only across the family's own devices via a self-built thin-sync backend. Code public, data private.</li>
+        <li style="margin-bottom:0.5rem"><strong style="color:var(--ink)">Quality floor:</strong> unit + acceptance tests in-repo, three CI tracks on every push.</li>
+        <li><strong style="color:var(--ink)">Real-world operation:</strong> live at starquiz.link, in daily use by a real family, iterated at the pace of a real child's school terms.</li>
+      </ul>
+
+      <div class="callout reveal">
+        <div class="who">Why this matters for AI product teams</div>
+        <p>Most AI UX work today is designing chat interfaces. This project is the harder problem: <strong>designing the interface between human intent and machine execution</strong> — specs, vocabulary, acceptance, and audit trails that make autonomous agents trustworthy enough to ship with.</p>
+      </div>
+    </section>
+
+    <!-- CASE 2: POCKET BUDGET -->
+    <section class="wrap">
+      <div class="sec-head"><span class="sec-num">02</span><h2>Pocket Budget <span class="cn">口袋账房</span></h2></div>
+      <hr class="sec-rule">
+      <div class="chips reveal" style="margin-top:0">
+        <span class="chip">React 19 · TypeScript</span>
+        <span class="chip">IndexedDB · Event Sourcing</span>
+        <span class="chip">PWA</span>
+      </div>
+      <div class="case-links reveal">
+        <a href="https://darkyana.github.io/pocket-budget/">Open the live app</a>
+        <a href="https://github.com/darkyana/pocket-budget">GitHub</a>
+      </div>
+
+      <div class="figure-row reveal">
+        <figure class="phone">
+          <div class="phone-frame"><div class="screen"><img src="assets/pocket-budget-home.png" alt="Pocket Budget today screen: daily rhythm card, budget pools, fixed obligations" loading="lazy"></div></div>
+          <figcaption>Today — "how much can I still spend"</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="phone-frame"><div class="screen"><img src="assets/pocket-budget-ledger.png" alt="Pocket Budget ledger screen with daily grouped entries" loading="lazy"></div></div>
+          <figcaption>Ledger — grouped by day, editable entries</figcaption>
+        </figure>
+      </div>
+
+      <h3>The product</h3>
+      <p class="reveal">
+        A local-first budgeting PWA that answers exactly one question: <strong>"how much can I spend
+        today, and should I buy this?"</strong> Bookkeeping, reports, and multi-device sync are
+        explicitly out of scope — after the books are balanced, what a person faces is the spending
+        decision in front of them, right now. Three competing approaches were prototyped and
+        archived before building; the comparison still lives in the repo.
+      </p>
+
+      <h3>Domain model as information architecture</h3>
+      <p class="reveal">
+        "Budget" is not one thing. The app separates four kinds of money, typed by where you record
+        it — <strong>entry point is the classification</strong>, so users never sort transactions after
+        the fact:
+      </p>
+      <div class="table-wrap reveal">
+        <table>
+          <thead>
+            <tr><th>Type</th><th>What it manages</th><th>The question it answers</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Daily</td><td>Daily rhythm, two day-types (workday / weekend)</td><td>What a normal day costs — soft signals, no hard limits</td></tr>
+            <tr><td>Budget</td><td>Spendable areas; monthly allowance derived into weekly pace</td><td>How much is left — derived at render time, never stored</td></tr>
+            <tr><td>Fixed</td><td>Recurring monthly / yearly obligations</td><td>Paid or not — a status, not a flow</td></tr>
+            <tr><td>Transfer</td><td>Movement between accounts (cash → card → investment)</td><td>The record of a fact — not spending</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card-grid reveal">
+        <div class="card">
+          <h4>Privacy as UX, not policy</h4>
+          <p>No accounts, no server, no telemetry — <strong>data never leaves the browser</strong>. One-tap JSON export as portable "vouchers"; import-as-restore for device moves.</p>
+        </div>
+        <div class="card">
+          <h4>Event-sourcing core</h4>
+          <p>Events are the only source of truth; every number is derived at render time. Day / week / month / year rollovers need <strong>no timers or resets</strong>. Guarded by 25 unit tests.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MORE FROM THE STUDIO -->
+    <section class="wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>More from the studio</h2></div>
+      <hr class="sec-rule">
+      <p class="reveal">
+        The two products above are the public showcase. The studio runs on more experiments —
+        private, but honest work:
+      </p>
+      <div class="exp-grid reveal">
+        <div class="exp">
+          <div class="exp-name">ai-shelf · macOS, Swift</div>
+          <p>A native macOS sidebar that docks to the screen edge as a persistent AI-session surface. No Dock icon, position memory, always within reach. Shelved, with a restart playbook written.</p>
+        </div>
+        <div class="exp">
+          <div class="exp-name">life-quest-debugger · TypeScript</div>
+          <p>A spec-driven tool for treating life goals like debuggable systems — quests, evidence, and iteration loops instead of resolutions.</p>
+        </div>
+        <div class="exp">
+          <div class="exp-name">super-ann · life-OS</div>
+          <p>A long-running personal operating system — journals, projects, memory, and configuration for an AI life companion, running since April 2026.</p>
+        </div>
+        <div class="exp">
+          <div class="exp-name">family-ledger · TypeScript</div>
+          <p>The household ledger behind Pocket Budget: real financial records with audit trails, checksums, and statement imports. The proving ground the budget app's schema migrations were tested on.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p class="credit">
+        <strong>Annika Yuan</strong> — Senior UX/UI Designer · AI-native product practice.
+        Day job: leading eCommerce UX for MyBMW / MINI apps (7M+ users). This page, like everything
+        above, was designed and shipped by the one-human + AI-agent team.
+      </p>
+      <div class="foot-links">
+        <a href="https://github.com/darkyana">github.com/darkyana</a>
+        <a href="https://linkedin.com/in/darkyana">linkedin.com/in/darkyana</a>
+        <a href="https://starquiz.link">starquiz.link</a>
+        <a href="https://darkyana.github.io/pocket-budget/">pocket-budget</a>
+      </div>
+      <p class="note" style="margin-top:1rem">© <span id="year">2026</span> Annika Yuan — built as a static site, hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = document.querySelectorAll('.reveal');
+    if (reduced || !('IntersectionObserver' in window)) {
+      items.forEach(el => el.classList.add('is-in'));
+    } else {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      items.forEach(el => io.observe(el));
+    }
+
+    /* Cursor spotlight over the hero grid */
+    (() => {
+      const hero = document.querySelector('.hero');
+      if (!hero) return;
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let tx = -999, ty = -999, cx = -999, cy = -999;
+      hero.addEventListener('pointermove', e => {
+        const r = hero.getBoundingClientRect();
+        tx = e.clientX - r.left;
+        ty = e.clientY - r.top;
+      });
+      hero.addEventListener('pointerleave', () => { tx = -999; ty = -999; });
+      (function tick() {
+        if (reduced) { cx = tx; cy = ty; }
+        else {
+          cx += (tx - cx) * 0.14;
+          cy += (ty - cy) * 0.14;
+          if (Math.abs(tx - cx) < 0.1 && Math.abs(ty - cy) < 0.1) { cx = tx; cy = ty; }
+        }
+        hero.style.setProperty('--mx', cx.toFixed(1) + 'px');
+        hero.style.setProperty('--my', cy.toFixed(1) + 'px');
+        requestAnimationFrame(tick);
+      })();
+    })();
+  </script>
+</body>
+</html>

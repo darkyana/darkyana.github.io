@@ -714,7 +714,10 @@ td .cn, .cn { color: var(--muted); font-weight: 400; }
   50%      { background-position: 100% 50%; }
 }
 
-.reveal {
+/* Progressive enhancement: content is visible by default; only hide it for
+   reveal animation once JS is confirmed running (html.js). No-JS browsers,
+   link previews, and print all see full content. */
+.js .reveal {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -722,9 +725,13 @@ td .cn, .cn { color: var(--muted); font-weight: 400; }
 
 .reveal.is-in { opacity: 1; transform: none; }
 
+@media print {
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
   .hero::before, .hero::after, .btn-grad,
   .monogram .badge, .kicker .dot, .crosslink, .site-header::before { animation: none; }
   .project-row, .exp, .monogram .badge, .crosslink, .thumbs img, .btn-grad { transition: none; }

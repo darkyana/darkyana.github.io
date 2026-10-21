@@ -493,6 +493,24 @@ p { margin-bottom: 0.9rem; }
 
 .thumbs img:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(33, 29, 46, 0.16); }
 
+/* Primary gradient button (featured row CTA) */
+.btn-grad {
+  display: inline-block;
+  margin-top: 1.05rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #fff;
+  background: var(--grad);
+  background-size: 300% 300%;
+  animation: living-shift 16s ease-in-out infinite;
+  border-radius: 20px;
+  padding: 0.5rem 1.15rem;
+  box-shadow: 0 4px 14px rgba(91, 58, 142, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-row--featured:hover .btn-grad { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(91, 58, 142, 0.35); }
+
 /* --- Cross-link banner ---------------------------------------------- */
 
 .crosslink {
@@ -706,9 +724,9 @@ td .cn, .cn { color: var(--muted); font-weight: 400; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .hero::before, .hero::after,
+  .hero::before, .hero::after, .btn-grad,
   .monogram .badge, .kicker .dot, .crosslink, .site-header::before { animation: none; }
-  .project-row, .exp, .monogram .badge, .crosslink, .thumbs img { transition: none; }
+  .project-row, .exp, .monogram .badge, .crosslink, .thumbs img, .btn-grad { transition: none; }
 }
 
 /* --- Contact ------------------------------------------------------------ */

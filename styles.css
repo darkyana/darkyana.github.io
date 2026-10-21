@@ -471,6 +471,28 @@ p { margin-bottom: 0.9rem; }
   color: var(--accent2);
 }
 
+/* Thumbnail strip under a project row */
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+  max-width: 42rem;
+}
+
+.thumbs img {
+  height: 130px;
+  width: auto;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+  box-shadow: 0 4px 14px rgba(33, 29, 46, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.thumbs img.wide { height: 104px; }
+
+.thumbs img:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(33, 29, 46, 0.16); }
+
 /* --- Cross-link banner ---------------------------------------------- */
 
 .crosslink {
@@ -686,7 +708,7 @@ td .cn, .cn { color: var(--muted); font-weight: 400; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero::before, .hero::after,
   .monogram .badge, .kicker .dot, .crosslink, .site-header::before { animation: none; }
-  .project-row, .exp, .monogram .badge, .crosslink { transition: none; }
+  .project-row, .exp, .monogram .badge, .crosslink, .thumbs img { transition: none; }
 }
 
 /* --- Contact ------------------------------------------------------------ */
@@ -766,6 +788,8 @@ td .cn, .cn { color: var(--muted); font-weight: 400; }
   .project-row { grid-template-columns: 1fr; gap: 0.3rem; padding: 1.4rem 0.4rem; }
   .p-index { display: none; }
   .p-meta { text-align: left; }
+  .thumbs img { height: 104px; }
+  .thumbs img.wide { height: 84px; }
   .figure-row { gap: 1rem; }
   .phone-frame { width: min(264px, 78vw); }
   section { padding: 2.5rem 0 0.75rem; }

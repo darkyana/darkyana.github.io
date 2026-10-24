@@ -46,18 +46,21 @@
       <div class="sec-head"><span class="sec-num">00</span><h2>How I work</h2></div>
       <hr class="sec-rule">
       <p class="reveal">
-        Since early 2026 I've been running a small product studio with an unusual team structure:
-        <strong>I am the only human</strong> — product owner, design lead, and final decision-maker —
-        and <strong>AI agents do the heavy lifting</strong> as PM, designer, developer, and tester.
-        The workflow is spec-driven: requirements are interrogated into specs, split into tickets,
-        implemented test-first, accepted ticket by ticket, then archived with a retrospective.
+        A one-human product studio: I own intent and final decisions; AI agents run PM, design,
+        development, and QA. <strong>The discipline layer around them is the actual design work.</strong>
       </p>
-      <p class="reveal">
-        What makes it work is not the models — it's the <strong>discipline layer I design around
-        them</strong>: governed domain vocabulary, architecture decision records (including rejected
-        options), written agent-collaboration conventions, CI on every push, and privacy scans
-        before every commit. AI produces; the system I designed keeps the output clean.
-      </p>
+
+      <div class="flow reveal" aria-label="Spec-driven workflow">
+        <span class="step"><small>01</small><b>Interrogate</b><i>requirements → spec</i></span>
+        <span class="arr" aria-hidden="true">→</span>
+        <span class="step"><small>02</small><b>Split</b><i>spec → tickets</i></span>
+        <span class="arr" aria-hidden="true">→</span>
+        <span class="step hot"><small>03</small><b>Build</b><i>test-first</i></span>
+        <span class="arr" aria-hidden="true">→</span>
+        <span class="step"><small>04</small><b>Accept</b><i>ticket by ticket</i></span>
+        <span class="arr" aria-hidden="true">→</span>
+        <span class="step"><small>05</small><b>Archive</b><i>retro + ADRs</i></span>
+      </div>
 
       <div class="stat-grid reveal">
         <div class="stat"><div class="num">2</div><div class="label">live products in production, public code on GitHub</div></div>
@@ -97,59 +100,59 @@
       <div class="figure-row reveal">
         <figure class="phone">
           <div class="phone-frame"><div class="screen"><img src="assets/star-quiz-home.png" alt="Star Quiz home screen: star balance, quiz mode selection, start button" loading="lazy"></div></div>
-          <figcaption>Home — star balance, three quiz modes</figcaption>
+          <figcaption>Home — star balance, three modes</figcaption>
         </figure>
         <figure class="phone">
           <div class="phone-frame"><div class="screen"><img src="assets/star-quiz-quiz.png" alt="Star Quiz answering screen with question and answer options" loading="lazy"></div></div>
-          <figcaption>Answering — earn stars per correct answer</figcaption>
+          <figcaption>Answering — “one more round” is the metric</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="phone-frame"><div class="screen"><img src="assets/star-quiz-proposals.png" alt="Star Quiz proposal board: rewards negotiated between parent and child" loading="lazy"></div></div>
+          <figcaption>Proposal board — rewards get negotiated</figcaption>
         </figure>
       </div>
 
       <h3>The product</h3>
       <p class="reveal">
-        A family learning app for my own child: kids answer quiz questions, earn stars, and
-        <strong>redeem stars for real-world rewards</strong>. The twist is the proposal board — the next
-        reward and its price are negotiated between parent and child inside the app, so motivation
-        is co-designed with the kid, not imposed. Deliberately a practice engine, not a testing
-        tool: no judgement, no punishment, adaptive difficulty, "one more round" as the only metric
-        that matters.
+        A family learning app: kids answer quizzes, earn stars, and redeem them for real-world
+        rewards <strong>negotiated on the proposal board</strong> — motivation co-designed with the
+        kid, not imposed. A practice engine, not a testing tool: adaptive difficulty, no judgement.
       </p>
 
-      <h3>My role — designing the human–agent contract</h3>
-      <p class="reveal">
-        I'm the product owner and design lead of a team where every other seat is an AI agent. The
-        real design work here is the <strong>collaboration contract</strong> that keeps a one-human team
-        shipping production-grade software:
-      </p>
-      <div class="card-grid reveal">
-        <div class="card">
-          <h4>Spec as the contract</h4>
-          <p>Every feature starts as an interrogated spec, gets split into tickets, is implemented test-first, and is <strong>accepted ticket by ticket</strong> before merging.</p>
+      <h3>The contract that ships it</h3>
+      <div class="tiles reveal">
+        <div class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h7M9 16h5"/></svg>
+          <h4>Spec as contract</h4>
+          <p>Interrogated, ticketed, accepted one by one before merge</p>
         </div>
-        <div class="card">
+        <div class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5a1 1 0 0 1 1-1h10l5 5v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M8 12l2.2 2.2L16 8.5"/></svg>
           <h4>Language governance</h4>
-          <p>A domain glossary (<span class="cn">CONTEXT.md</span>) is the single source of truth — every term carries an explicit <em>"this is NOT what it means"</em> avoid-list.</p>
+          <p>Glossary with explicit avoid-lists (<span class="cn">CONTEXT.md</span>)</p>
         </div>
-        <div class="card">
+        <div class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3.5v5M12 15.5v5M3.5 12h5M15.5 12h5"/></svg>
           <h4>Decision archaeology</h4>
-          <p><strong>18 architecture decision records</strong>, each preserving rejected alternatives. Six months later, anyone can read why the system is shaped the way it is.</p>
+          <p>18 ADRs, rejected alternatives preserved</p>
         </div>
-        <div class="card">
-          <h4>Studio vs. showroom</h4>
-          <p>A two-repo system (ADR 0018): the messy studio stays private; the public repo is an <strong>allow-listed, curated projection</strong>.</p>
+        <div class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7v7H4zM13 12h7v7h-7z"/><path d="M11 8.5h2M11 15.5h2M15.5 12v0"/></svg>
+          <h4>Studio vs showroom</h4>
+          <p>Private mess; public repo is an allow-listed projection</p>
         </div>
       </div>
 
-      <h3>Decisions I own</h3>
-      <ul class="reveal" style="padding-left:1.2rem;color:var(--muted)">
-        <li style="margin-bottom:0.5rem"><strong style="color:var(--ink)">Data boundary as a product promise:</strong> no accounts, no analytics, no long-term profiling — records live locally first and sync only across the family's own devices via a self-built thin-sync backend. Code public, data private.</li>
-        <li style="margin-bottom:0.5rem"><strong style="color:var(--ink)">Quality floor:</strong> unit + acceptance tests in-repo, three CI tracks on every push.</li>
-        <li><strong style="color:var(--ink)">Real-world operation:</strong> live at starquiz.link, in daily use by a real family, iterated at the pace of a real child's school terms.</li>
-      </ul>
+      <div class="chips reveal">
+        <span class="chip">Data boundary: no accounts, no analytics</span>
+        <span class="chip">Local-first, family-only sync</span>
+        <span class="chip">3-track CI on every push</span>
+      </div>
 
       <div class="callout reveal">
-        <div class="who">Why this matters for AI product teams</div>
-        <p>Most AI UX work today is designing chat interfaces. This project is the harder problem: <strong>designing the interface between human intent and machine execution</strong> — specs, vocabulary, acceptance, and audit trails that make autonomous agents trustworthy enough to ship with.</p>
+        <div class="who">Why it matters</div>
+        <p>Not designing chat interfaces — <strong>designing the interface between human intent and
+        machine execution</strong>: specs, vocabulary, acceptance, audit trails.</p>
       </div>
     </section>
 
@@ -170,52 +173,75 @@
       <div class="figure-row reveal">
         <figure class="phone">
           <div class="phone-frame"><div class="screen"><img src="assets/pocket-budget-home.png" alt="Pocket Budget today screen: daily rhythm card, budget pools, fixed obligations" loading="lazy"></div></div>
-          <figcaption>Today — "how much can I still spend"</figcaption>
+          <figcaption>Today — “how much can I still spend”</figcaption>
         </figure>
         <figure class="phone">
           <div class="phone-frame"><div class="screen"><img src="assets/pocket-budget-ledger.png" alt="Pocket Budget ledger screen with daily grouped entries" loading="lazy"></div></div>
-          <figcaption>Ledger — grouped by day, editable entries</figcaption>
+          <figcaption>Ledger <span class="cn">流水</span> — grouped by day</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="phone-frame"><div class="screen"><img src="assets/pocket-budget-entry.png" alt="Pocket Budget entry sheet opened from a daily bucket, pre-classified" loading="lazy"></div></div>
+          <figcaption>Entry — tap a bucket, it's pre-classified</figcaption>
         </figure>
       </div>
 
       <h3>The product</h3>
       <p class="reveal">
-        A local-first budgeting PWA that answers exactly one question: <strong>"how much can I spend
-        today, and should I buy this?"</strong> Bookkeeping, reports, and multi-device sync are
-        explicitly out of scope — after the books are balanced, what a person faces is the spending
-        decision in front of them, right now. Three competing approaches were prototyped and
-        archived before building; the comparison still lives in the repo.
+        A local-first budgeting PWA answering one question: <strong>“how much can I spend today,
+        and should I buy this?”</strong> Bookkeeping, reports, and sync are deliberately out of scope.
       </p>
 
-      <h3>Domain model as information architecture</h3>
-      <p class="reveal">
-        "Budget" is not one thing. The app separates four kinds of money, typed by where you record
-        it — <strong>entry point is the classification</strong>, so users never sort transactions after
-        the fact:
-      </p>
-      <div class="table-wrap reveal">
-        <table>
-          <thead>
-            <tr><th>Type</th><th>What it manages</th><th>The question it answers</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Daily</td><td>Daily rhythm, two day-types (workday / weekend)</td><td>What a normal day costs — soft signals, no hard limits</td></tr>
-            <tr><td>Budget</td><td>Spendable areas; monthly allowance derived into weekly pace</td><td>How much is left — derived at render time, never stored</td></tr>
-            <tr><td>Fixed</td><td>Recurring monthly / yearly obligations</td><td>Paid or not — a status, not a flow</td></tr>
-            <tr><td>Transfer</td><td>Movement between accounts (cash → card → investment)</td><td>The record of a fact — not spending</td></tr>
-          </tbody>
-        </table>
+      <h3>Four kinds of money</h3>
+      <p class="reveal">Typed by where you record it — the entry point <em>is</em> the classification:</p>
+      <div class="tiles reveal">
+        <div class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+          <h4>Daily <span class="cn">日常</span></h4>
+          <p>What a normal day costs — soft signals, no hard limits</p>
+        </div>
+        <div class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16a8 8 0 0 1 16 0"/><path d="M12 16l4.2-5"/></svg>
+          <h4>Budget <span class="cn">预算</span></h4>
+          <p>How much is left — derived at render, never stored</p>
+        </div>
+        <div class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+          <h4>Fixed <span class="cn">固定</span></h4>
+          <p>Paid or not — a status, not a flow</p>
+        </div>
+        <div class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13"/><path d="M14 6l3 3-3 3"/><path d="M20 15H7"/><path d="M10 12l-3 3 3 3"/></svg>
+          <h4>Transfer <span class="cn">走账</span></h4>
+          <p>The record of a fact — not spending</p>
+        </div>
       </div>
 
-      <div class="card-grid reveal">
-        <div class="card">
-          <h4>Privacy as UX, not policy</h4>
-          <p>No accounts, no server, no telemetry — <strong>data never leaves the browser</strong>. One-tap JSON export as portable "vouchers"; import-as-restore for device moves.</p>
-        </div>
-        <div class="card">
-          <h4>Event-sourcing core</h4>
-          <p>Events are the only source of truth; every number is derived at render time. Day / week / month / year rollovers need <strong>no timers or resets</strong>. Guarded by 25 unit tests.</p>
-        </div>
+      <div class="chips reveal">
+        <span class="chip">No accounts · no server · no telemetry</span>
+        <span class="chip">Event-sourced core, 25 unit tests</span>
+        <span class="chip">JSON export as portable vouchers</span>
+      </div>
+
+      <h3>Recent iteration — 24 Oct 2026</h3>
+      <div class="stat-grid cols-3 reveal">
+        <div class="stat"><div class="num">39</div><div class="label">PRs merged — one day, one repo</div></div>
+        <div class="stat"><div class="num">24h</div><div class="label">from cognitive cleanup to a shippable design language</div></div>
+        <div class="stat"><div class="num">1</div><div class="label">human directing an all-agent team</div></div>
+      </div>
+      <div class="flow reveal" aria-label="Iteration steps">
+        <span class="step"><small>1</small><b>Language first</b><i>glossary locked, audits dated</i></span>
+        <span class="arr" aria-hidden="true">→</span>
+        <span class="step"><small>2</small><b>Comments</b><i>default-no, four carve-outs</i></span>
+        <span class="arr" aria-hidden="true">→</span>
+        <span class="step"><small>3</small><b>Tokens</b><i>design-scan guardrails (G3)</i></span>
+        <span class="arr" aria-hidden="true">→</span>
+        <span class="step hot"><small>4</small><b>Lab → app</b><i>mint accent adopted (#12)</i></span>
+      </div>
+
+      <div class="callout reveal">
+        <div class="who">39 PRs · one day</div>
+        <p>A pace impossible without the AI-agent team and the <strong>agentic coding &amp;
+        designing flow</strong> I explored and forged.</p>
       </div>
     </section>
 
@@ -223,26 +249,22 @@
     <section class="wrap">
       <div class="sec-head"><span class="sec-num">03</span><h2>More from the studio</h2></div>
       <hr class="sec-rule">
-      <p class="reveal">
-        The two products above are the public showcase. The studio runs on more experiments —
-        private, but honest work:
-      </p>
       <div class="exp-grid reveal">
         <div class="exp">
           <div class="exp-name">ai-shelf · macOS, Swift</div>
-          <p>A native macOS sidebar that docks to the screen edge as a persistent AI-session surface. No Dock icon, position memory, always within reach. Shelved, with a restart playbook written.</p>
+          <p>Edge-docked AI-session sidebar. Shelved, with a restart playbook written.</p>
         </div>
         <div class="exp">
           <div class="exp-name">life-quest-debugger · TypeScript</div>
-          <p>A spec-driven tool for treating life goals like debuggable systems — quests, evidence, and iteration loops instead of resolutions.</p>
+          <p>Life goals as debuggable systems — quests, evidence, iteration loops.</p>
         </div>
         <div class="exp">
           <div class="exp-name">super-ann · life-OS</div>
-          <p>A long-running personal operating system — journals, projects, memory, and configuration for an AI life companion, running since April 2026.</p>
+          <p>Journals, projects, memory, config — running since April 2026.</p>
         </div>
         <div class="exp">
           <div class="exp-name">family-ledger · TypeScript</div>
-          <p>The household ledger behind Pocket Budget: real financial records with audit trails, checksums, and statement imports. The proving ground the budget app's schema migrations were tested on.</p>
+          <p>Household ledger with audit trails — the proving ground for Pocket Budget's schema.</p>
         </div>
       </div>
     </section>
@@ -257,7 +279,7 @@
       </p>
       <div class="foot-links">
         <a href="https://github.com/darkyana">github.com/darkyana</a>
-        <a href="https://linkedin.com/in/darkyana">linkedin.com/in/darkyana</a>
+        <a href="https://linkedin.com/in/darkyana">linkedin/in/darkyana</a>
         <a href="https://starquiz.link">starquiz.link</a>
         <a href="https://darkyana.github.io/pocket-budget/">pocket-budget</a>
       </div>
